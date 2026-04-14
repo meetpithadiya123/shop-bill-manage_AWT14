@@ -10,7 +10,9 @@ const app = express();
 const PORT = process.env.PORT || 5000;
 const MONGO_URI = process.env.MONGO_URI;
 
-app.use(cors());
+app.use(cors({
+  origin: "https://shop-bill-manage.vercel.app/"
+}));
 app.use(express.json());
 
 app.get("/", (req, res) => {
