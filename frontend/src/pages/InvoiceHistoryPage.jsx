@@ -45,7 +45,7 @@ const InvoiceHistoryPage = () => {
   }
 
   return (
-    <div className="mx-auto max-w-7xl animate-in fade-in slide-in-from-bottom-4 duration-700 p-6 md:p-12">
+    <div className="mx-auto max-w-7xl animate-in fade-in slide-in-from-bottom-4 duration-700 p-6 md:p-12 min-h-screen pb-24">
       <div className="mb-10 flex flex-col justify-between gap-4 md:flex-row md:items-end">
         <div>
             <h1 className="text-3xl font-black tracking-tight text-slate-900">Billing History</h1>
@@ -68,6 +68,7 @@ const InvoiceHistoryPage = () => {
           <table className="min-w-full text-left">
             <thead>
               <tr className="border-b border-slate-100 bg-slate-50/50">
+                <th className="px-6 py-5 text-xs font-bold uppercase tracking-widest text-slate-400">No.</th>
                 <th className="px-6 py-5 text-xs font-bold uppercase tracking-widest text-slate-400">Customer</th>
                 <th className="px-6 py-5 text-xs font-bold uppercase tracking-widest text-slate-400">Product</th>
                 <th className="px-6 py-5 text-xs font-bold uppercase tracking-widest text-slate-400">Date</th>
@@ -78,7 +79,7 @@ const InvoiceHistoryPage = () => {
             <tbody className="divide-y divide-slate-50">
               {invoices.length === 0 ? (
                 <tr>
-                  <td className="px-6 py-12 text-center" colSpan={5}>
+                  <td className="px-6 py-12 text-center" colSpan={6}>
                     <div className="flex flex-col items-center gap-3">
                         <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-slate-50 text-slate-300">
                             <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -90,8 +91,11 @@ const InvoiceHistoryPage = () => {
                   </td>
                 </tr>
               ) : (
-                invoices.map((invoice) => (
+                invoices.map((invoice, index) => (
                   <tr key={invoice._id} className="group transition-colors hover:bg-slate-50/50">
+                    <td className="px-6 py-5">
+                        <p className="text-xs font-bold text-slate-400">#{index + 1}</p>
+                    </td>
                     <td className="px-6 py-5">
                         <p className="font-bold text-slate-900">{invoice.customerName}</p>
                     </td>
