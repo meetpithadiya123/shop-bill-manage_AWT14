@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import { downloadInvoicePdf } from "../utils/invoicePdf";
 
-const API_URL = "http://localhost:5000/api/invoices";
+const API_URL = "https://shop-backend-one.vercel.app/api/invoices";
 
 const InvoiceHistoryPage = () => {
   const [invoices, setInvoices] = useState([]);
