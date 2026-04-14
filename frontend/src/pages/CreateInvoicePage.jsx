@@ -2,7 +2,7 @@ import { useMemo, useState } from "react";
 import axios from "axios";
 import { downloadInvoicePdf } from "../utils/invoicePdf";
 
-const API_URL = "http://localhost:5000/api/invoices";
+const API_URL = import.meta.env.VITE_API_URL;
 
 const today = new Date().toISOString().split("T")[0];
 
