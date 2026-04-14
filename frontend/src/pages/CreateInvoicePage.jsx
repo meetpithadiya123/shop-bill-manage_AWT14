@@ -2,7 +2,7 @@ import { useMemo, useState } from "react";
 import axios from "axios";
 import { downloadInvoicePdf } from "../utils/invoicePdf";
 
-const API_URL = "https://shop-backend-one.vercel.app/";
+const API_URL = "https://shop-backend-one.vercel.app/api/invoices";
 
 const today = new Date().toISOString().split("T")[0];
 
